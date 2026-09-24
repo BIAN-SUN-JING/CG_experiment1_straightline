@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>WebGL2 鼠标交互绘制直线</title>
+    <style>
+        body { font-family: Arial, "Microsoft YaHei", sans-serif; margin: 24px; }
+        .panel { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
+        label { display: flex; gap: 6px; align-items: center; }
+        input[type="number"] { width: 76px; }
+        .coordinate { min-width: 155px; }
+        canvas { border: 1px solid #777; cursor: crosshair; display: block; }
+    </style>
+</head>
+<body onload="main()">
+
+    <div class="panel">
+        <span class="coordinate">起点坐标：<span id="startPoint">未设置</span></span>
+        <span class="coordinate">终点坐标：<span id="endPoint">未设置</span></span>
+        <label>打点个数：<input id="pointCount" type="number" min="2" max="1000" value="20"></label>
+        <label>打点颜色：<input id="pointColor" type="color" value="#00a8ff"></label>
+    </div>
+
+    <canvas id="webgl-myname" width="600" height="600">
+        Please use the browser supporting "canvas".
+    </canvas>
+
+    <script src="DrawLineInteractive.js"></script>
+
+</body>
+</html>
